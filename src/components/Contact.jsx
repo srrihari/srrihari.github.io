@@ -22,6 +22,7 @@ export default function Contact() {
           justifyContent: "center",
           alignItems: "center",
           marginBottom: "50px",
+          flexWrap: "wrap",
         }}
       >
         <SocialIcon url="https://github.com/srrihari" />

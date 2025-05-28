@@ -1,26 +1,61 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { FaStar } from "react-icons/fa";
 
 export default function Home() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const maxMove = 100; // max move up 100px
+  const moveY = Math.min(scrollY * 0.3, maxMove);
+
   return (
-    // <div>
-    //   <div class="circle-bg"></div>
-    //   <img src="srri.png" alt="" width="250" />
-    // </div>
     <>
-      <section class="hero">
+      <section className="hero">
         <div className="hello">Hello!</div>
 
-        <div class="circle-bg"></div>
+        <div className="circle-bg"></div>
 
-        <div class="hero-content">
-          <div class="hero-text">
+        <div className="hero-content">
+          <div className="leftCont">
+            <h6>Passionate about clean code, </h6>
+            <h6>pixel-perfect UI, and performance.</h6>
+          </div>
+          <div className="hero-text">
             <h2>
               I'm <span>Srri Hari</span>,
             </h2>
             <h1>Web Developer</h1>
           </div>
 
-          <img src="My.png" alt="SrriHari" class="hero-image" />
+          <img
+            src="My.png"
+            alt="SrriHari"
+            className="hero-image"
+            style={{
+              transform: `translateY(-${moveY}px)`,
+              transition: "transform 0.1s ease-out",
+            }}
+          />
+
+          <div className="rightCont">
+            <div className="star">
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+            </div>
+            <h2>3 Years</h2>
+            <h3>Experience</h3>
+          </div>
         </div>
       </section>
     </>
