@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 
 export default function Home() {
+  const cur_date = new Date();
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -53,7 +54,7 @@ export default function Home() {
               <FaStar />
               <FaStar />
             </div>
-            <h2>3 Years</h2>
+            <h2>{cur_date.getFullYear() - 2023} Years</h2>
             <h3>Experience</h3>
           </div>
         </div>
