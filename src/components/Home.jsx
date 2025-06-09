@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const cur_date = new Date();
   const [scrollY, setScrollY] = useState(0);
+  let navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +35,7 @@ export default function Home() {
             <h2>
               I'm <span>Srri Hari</span>,
             </h2>
-            <h1>Web Developer</h1>
+            <h1 className="typing-text">Web Developer</h1>
           </div>
 
           <img
@@ -44,6 +46,7 @@ export default function Home() {
               transform: `translateY(-${moveY}px)`,
               transition: "transform 0.1s ease-out",
             }}
+            onClick={() => navigate(`/about`)}
           />
 
           <div className="rightCont">

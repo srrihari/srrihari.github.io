@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
+import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -11,23 +10,59 @@ function NavBar() {
   const isActive = (path) => loc.pathname === path;
 
   const [expanded, setExpanded] = useState(false);
+  const [showLogo, setShowLogo] = useState(true);
 
   const handleNavClick = () => setExpanded(false);
+
+  useEffect(() => {
+    if (expanded) {
+      setShowLogo(false);
+    } else {
+      const timer = setTimeout(() => setShowLogo(true), 300);
+      return () => clearTimeout(timer);
+    }
+  }, [expanded]);
 
   return (
     <Navbar
       expand="sm"
-      bg="dark"
       variant="dark"
       expanded={expanded}
       onToggle={() => setExpanded((prev) => !prev)}
-      className="nav"
+      className="nav position-relative"
     >
       <Container fluid>
         <Navbar.Toggle aria-controls="navbarScroll" />
+
+        {/* SRRI logo centered and visible only when not expanded */}
+        {showLogo && (
+          <div
+            style={{
+              position: "absolute",
+              left: "50%",
+              transform: "translateX(-50%)",
+              zIndex: 1,
+            }}
+          >
+            <Navbar.Text
+              style={{
+                color: "white",
+                fontSize: "x-large",
+                fontFamily: "Anta, sans-serif",
+                fontWeight: 400,
+                backgroundColor: "rgb(243, 123, 59)",
+                borderRadius: "30px",
+                padding: "0 10px",
+              }}
+            >
+              SRRI
+            </Navbar.Text>
+          </div>
+        )}
+
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="w-100 justify-content-evenly text-center"
+            className="w-100 justify-content-evenly text-center align-items-center"
             navbarScroll
           >
             <Nav.Link
@@ -46,46 +81,17 @@ function NavBar() {
             >
               About
             </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="/service"
-              onClick={handleNavClick}
-              style={{ color: isActive("/service") ? "orange" : "white" }}
-            >
-              Service
-            </Nav.Link>
 
-            {!expanded && (
-              <Navbar.Text
-                style={{
-                  color: "white",
-                  fontSize: "x-large",
-                  fontFamily: "Anta, sans-serif",
-                  fontWeight: 400,
-                  backgroundColor: "rgb(243, 123, 59)",
-                  borderRadius: "30px",
-                  padding: "0 10px",
-                }}
-              >
-                SRRI
-              </Navbar.Text>
-            )}
+            {/* Placeholder to keep spacing when SRRI is outside the DOM flow */}
+            <div style={{ width: "80px" }} />
 
             <Nav.Link
               as={Link}
-              to="/resume"
+              to="/activities"
               onClick={handleNavClick}
-              style={{ color: isActive("/resume") ? "orange" : "white" }}
+              style={{ color: isActive("/activities") ? "orange" : "white" }}
             >
-              Resume
-            </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="/project"
-              onClick={handleNavClick}
-              style={{ color: isActive("/project") ? "orange" : "white" }}
-            >
-              Project
+              Activities
             </Nav.Link>
             <Nav.Link
               as={Link}
