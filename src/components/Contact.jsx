@@ -25,14 +25,31 @@ export default function Contact() {
           flexWrap: "wrap",
         }}
       >
-        <SocialIcon url="https://github.com/srrihari" />
-        <SocialIcon url="https://www.linkedin.com/in/srri-hari-t-r-30b69829b/" />
-        <SocialIcon url="https://wa.me/7339281365" />
-        <SocialIcon url="https://x.com/SrriHariTR?t=3gQr5QIekGhyFrJxnKqb1Q&s=09" />
-        <SocialIcon url="https://www.instagram.com/srriharitr" />
-        <SocialIcon url="https://www.threads.com/@srriharitr" />
+        <SocialIcon url="https://github.com/srrihari" className="icon-hover" />
+        <SocialIcon
+          url="https://www.linkedin.com/in/srri-hari-t-r-30b69829b/"
+          className="icon-hover"
+        />
+        <SocialIcon
+          url="https://wa.me/7339281365"
+          className="icon-hover />
+        <SocialIcon
+          url="
+          https:className="icon-hover" //x.com/SrriHariTR?t=3gQr5QIekGhyFrJxnKqb1Q&s=09"
+        />
+        <SocialIcon
+          url="https://www.instagram.com/srriharitr"
+          className="icon-hover"
+        />
+        <SocialIcon
+          url="https://www.threads.com/@srriharitr"
+          className="icon-hover"
+        />
 
-        <a href="https://discordapp.com/users/1290314750747476034">
+        <a
+          href="https://discordapp.com/users/1290314750747476034"
+          className="icon-hover"
+        >
           <FaDiscord size={40} color="#5865F2" />
         </a>
       </div>
@@ -47,6 +64,7 @@ export default function Contact() {
             fontSize: "18px",
           }}
           aria-label="Phone"
+          className="icon-hover"
         >
           <FaPhoneAlt
             style={{ marginRight: "8px", color: "rgb(243, 123, 59)" }}
@@ -63,6 +81,7 @@ export default function Contact() {
             fontSize: "18px",
           }}
           aria-label="Email"
+          className="icon-hover"
         >
           <IoIosMail
             style={{ marginRight: "8px", color: "rgb(243, 123, 59)" }}

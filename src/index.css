@@ -358,6 +358,19 @@ body {
   padding: 20px;
 }
 
+.about:hover  {
+  filter: drop-shadow(0 0 5px #ff8800);
+}
+
+.icon-hover {
+  transition: transform 0.3s ease;
+}
+
+.icon-hover:hover {
+  transform: scale(1.2) translateY(-5px);
+}
+
+
 .para{
   color: rgb(198, 193, 190);
   padding: 30px;
