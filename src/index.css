@@ -51,6 +51,7 @@ body {
 .project{
   display: flex;
   justify-content:center  ;
+   align-items: flex-start;
   padding: 40px;
   flex-wrap: wrap;
   gap: 20px 10px ;
@@ -60,8 +61,22 @@ body {
 /* Wrapper around each card */
 .procard-container {
   position: relative;
-  transition: filter 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease; /* updated */
+  will-change: transform;
 }
+
+/* When any card is hovered */
+.project:hover .procard-container:not(:hover) {
+  transform: translateY(10px);   /* push other cards down */
+  filter: blur(0.3px);           /* subtle focus effect (optional) */
+  opacity: 0.95;                 /* subtle fade (optional) */
+}
+
+.project .procard-container:hover {
+  transform: translateY(-10px);  /* lift hovered card */
+  z-index: 2;
+}
+
 
 /* Tech stack styling */
 .tech-stack {
