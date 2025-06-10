@@ -51,6 +51,12 @@ export default function Projects() {
       href: "https://github.com/srrihari/px_test",
       tech: ["HTML"],
     },
+    {
+      title: "Let's-Chat",
+      desc: "This is a real-time chat application.",
+      href: "https://livechat-bay.vercel.app/",
+      tech: ["JavaScript", "CSS", "HTML"],
+    },
   ];
 
   return (
