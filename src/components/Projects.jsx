@@ -54,7 +54,7 @@ export default function Projects() {
     {
       title: "Let's-Chat",
       desc: "This is a real-time chat application.",
-      href: "https://livechat-bay.vercel.app/",
+      href: "https://letz-chat.netlify.app/",
       tech: ["JavaScript", "CSS", "HTML"],
     },
   ];
