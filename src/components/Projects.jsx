@@ -52,7 +52,7 @@ export default function Projects() {
       tech: ["HTML"],
     },
     {
-      title: "Let's-Chat",
+      title: "LetZ-Chat",
       desc: (
         <>
           This is a real-time chat application.
