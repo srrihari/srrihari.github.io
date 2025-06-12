@@ -35,9 +35,15 @@ export default function Projects() {
     },
     {
       title: "Text-To-QR",
-      desc: "An Event Management System is a platform designed to streamline the planning, organizing, and execution of events.",
+      desc: "This web application lets users enter text and instantly generates a QR code from it. After submission, the user is taken to a confirmation page displaying the QR code.",
       href: "https://github.com/srrihari/TextToQR",
       tech: ["JavaScript", "EJS", "CSS"],
+    },
+    {
+      title: "Text-To-QR-PDF",
+      desc: "This command-line application prompts the user to enter text and generates a QR code in response. The generated QR code is then provided as a downloadable PDF file.",
+      href: "https://github.com/srrihari/TestToQR-PDF-",
+      tech: ["JavaScript"],
     },
     {
       title: "Contact-Management-System",
