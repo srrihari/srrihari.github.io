@@ -53,7 +53,15 @@ export default function Projects() {
     },
     {
       title: "Let's-Chat",
-      desc: "This is a real-time chat application.",
+      desc: (
+        <>
+          This is a real-time chat application.
+          <br />
+          Access Code:{" "}
+          <span style={{ color: "white", fontSize: "large" }}>123456</span>
+        </>
+      ),
+
       href: "https://letz-chat.netlify.app/",
       tech: ["JavaScript", "CSS", "HTML"],
     },
