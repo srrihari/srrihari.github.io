@@ -335,12 +335,7 @@ body {
 
 @media (max-width: 548px) {
   .hero-image {
-    margin-top: 80px; /* adjust as needed */
-  }
-  .circle-bg{
     margin-top: 80px;
-    height: 400px;
-    width: 400px;
   }
 }
 
@@ -383,7 +378,7 @@ body {
   margin-top: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 915px) {
   .leftCont, .rightCont {
     position: static; /* remove absolute positioning */
     width: 100%;      /* full width */
