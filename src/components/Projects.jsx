@@ -71,6 +71,22 @@ export default function Projects() {
       href: "https://letz-chat.netlify.app/",
       tech: ["JavaScript", "CSS", "HTML"],
     },
+    {
+      title: "LetZ-Talk",
+      desc: (
+        <>
+          This is a real-time Video/Audio call application.
+          <br />
+          <span style={{ color: "white", fontSize: "medium" }}>
+            A <span style={{ color: "#ff8f20" }}>6-digit</span> code will be
+            generated to connect
+          </span>
+        </>
+      ),
+
+      href: "https://letztalk.netlify.app/",
+      tech: ["JavaScript", "CSS", "HTML"],
+    },
   ];
 
   return (
